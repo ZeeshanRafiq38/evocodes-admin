@@ -1,0 +1,25 @@
+.pagination li{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border : 1px solid var(--primary);
+    font-size: 14px;
+    color: var(--secondary);
+    cursor : pointer;
+}
+.pagination li:not(.next , .previous):hover{
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+.pagination .selected {
+    background-color: var(--primary);
+    color : var(--pure);
+    border-color: var(--primary);
+}
+.pagination .next , .pagination .previous{
+    border : none ;
+}

@@ -1,0 +1,54 @@
+@tailwind utilities;
+
+@layer utilities {
+    .container.p-x {
+        @apply sm:px-0 px-3;
+    }
+    
+    .btn-primary {
+        @apply text-pure rounded-full duration-200 ease-in-out disabled:cursor-not-allowed cursor-pointer; 
+        background-image: var(--primary-gradient); ;
+    }
+    .btn-primary:hover {
+        background-image: var(--primary-gradient-hover);
+    }
+    
+    .section-heading {
+        @apply xl:text-4xl md:text-3xl sm:text-2xl text-[22px]  font-semibold text-pure capitalize;
+    }
+    
+    .heading-lg {
+        @apply md:text-xl sm:text-lg text-base font-semibold text-pure;
+    }
+    
+    .heading-sm {
+        @apply md:text-lg sm:text-base text-sm font-medium;
+    }
+    
+    .w-spacing-sm {
+      word-spacing: 0.1em;
+    }
+    
+    .w-spacing-md {
+      word-spacing: 0.2em;
+    }
+    
+    .w-spacing-lg {
+      word-spacing: 0.3em;
+    }
+        
+    .shadow-circle {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    /* ACTIONS BUTTONS */
+    .btn-edit , .btn-delete {
+        @apply w-[30px] h-[30px] rounded-full flex items-center justify-center text-pure text-base;
+    }
+    .btn-edit {
+        @apply bg-green-500 hover:bg-opacity-80;
+    }
+    .btn-delete {
+        @apply bg-red-500 hover:bg-opacity-80;
+    }
+}

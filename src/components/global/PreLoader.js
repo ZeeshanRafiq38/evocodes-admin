@@ -1,0 +1,11 @@
+import React from 'react'
+
+const PreLoader = () => {
+    return (
+        <div className='fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-white z-[999999]'>
+            <div className="loader"></div>
+        </div>
+    )
+}
+
+export default PreLoader

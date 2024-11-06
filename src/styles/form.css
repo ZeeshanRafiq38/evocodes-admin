@@ -1,0 +1,18 @@
+.form-row {
+    @apply flex flex-col gap-1.5 flex-1 w-full ;
+}
+.form-row label , .label {
+    @apply font-semibold text-dark;
+}
+.form-row input , .form-row select , .form-row textarea , .form-row select , .input {
+    @apply border border-gray-300 py-3 px-3 text-gray-600 rounded-md outline-none w-full
+}
+.form-row .error-msg , .error-msg {
+    @apply text-red-500 text-sm ;
+}
+.border-red {
+    @apply !border !border-red-500;
+}
+.input-error {
+    border: 1px solid #ff0000 !important; /* Red border for error */
+}
