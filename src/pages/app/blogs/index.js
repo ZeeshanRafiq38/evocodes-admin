@@ -5,7 +5,6 @@ import ItemNotFound from 'components/global/ItemNotFound';
 import Loader from 'components/global/Loader';
 import Pagination from 'components/global/pagination';
 import Axios from 'config/api';
-import React, { useEffect } from 'react'
 import { useQuery } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -18,16 +17,16 @@ const Blogs = () => {
     const { docs : blogs , currentPage , pages , docsCount , keyword , sort } = useSelector(state => state.blog);
 
     const queryKey = ['fetch-all-blogs' , currentPage , keyword , sort ];
-    const { isLoading , isError , error , data }   = useQuery(queryKey , () => {
+    const { isLoading , isError , error } = useQuery(queryKey , () => {
         return Axios(`/blog/for-admin?page=${currentPage}&keyword=${keyword}&sort=${sort}`);
-    } , { refetchOnWindowFocus : false });
-
-    useEffect(() => {
-        if(data) {
+    } , { 
+        refetchOnWindowFocus : false,
+        onSuccess: (data) => {
             const { data : { data : { page , pages , docs , docsCount } } } = data;
             dispatch(setStats({ docs , pages , page , docsCount }))
         }
-    } ,[data])
+    });
+
 
     return (
         <div>

@@ -11,6 +11,7 @@ import ToggleButton from './ToggleButton'
 import OtpInputField from './OtpInputField'
 import TagsInput from './TagsInput'
 import MetaTagsInput from './MetaTagsInput'
+import FaqsInput from './FaqsInput'
 
 
 function FormControl (props) {
@@ -43,6 +44,8 @@ function FormControl (props) {
             return <TagsInput {...rest} />
         case 'meta':
             return <MetaTagsInput {...rest} />
+        case 'faq':
+            return <FaqsInput {...rest} />
         default:
             return null
     }

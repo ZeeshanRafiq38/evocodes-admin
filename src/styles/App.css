@@ -60,3 +60,26 @@ input[type=number] {
         transform: scale(1);
     }
 }
+
+
+/* React Confirm Alert */
+
+.react-confirm-alert-overlay {
+    z-index: 999999999 !important;
+    background : #000000bd !important;
+}
+.react-confirm-alert-body {
+    border-radius: 8px !important;
+    background : var(--primary);
+    color : var(--dark) !important;
+    padding: 20px !important;
+}
+.react-confirm-alert-body h1 {
+    @apply text-xl font-semibold mb-2 text-primary;
+}
+.react-confirm-alert-body button{
+    @apply mt-4;
+}
+.react-confirm-alert-body button:first-child{
+    @apply bg-primary hover:opacity-90;
+}

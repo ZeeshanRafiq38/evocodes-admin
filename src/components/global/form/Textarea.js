@@ -30,7 +30,7 @@ function Textarea(props) {
                 onChange={handleChange}
                 className={`${formik.touched[name] && formik.errors[name] ? 'border-red' : ''} resize-none h-[120px]`}
             />
-            <div className="text-right text-sm text-gray-300 mt-1">
+            <div className="text-right text-sm text-gray-500 mt-1">
                 {charCount}{ maxLength && `/${maxLength}`}
             </div>
             {error && <div className="text-red-500 text-sm mt-1">{error}</div>}

@@ -17,6 +17,10 @@ const Blogs = Loadable(lazy(() => import('pages/app/blogs')));
 const AddNewBlog = Loadable(lazy(() => import('pages/app/blogs/AddNewBlog')));
 const EditBlog = Loadable(lazy(() => import('pages/app/blogs/EditBlog')));
 
+const Locations = Loadable(lazy(() => import('pages/app/locations')));
+const AddLocation = Loadable(lazy(() => import('pages/app/locations/AddLocation')));
+const EditLocation = Loadable(lazy(() => import('pages/app/locations/EditLocation')));
+
 
 
 // AUTH 
@@ -59,6 +63,9 @@ const Router = [
             { path : '/app/blogs' , exact : true , element : <ProtectedRoute element={<Blogs />} /> } ,
             { path : '/app/blogs/add' , exact : true , element : <ProtectedRoute element={<AddNewBlog />} /> } ,
             { path : '/app/blogs/edit/:slug' , exact : true , element : <ProtectedRoute element={<EditBlog />} /> } ,
+            { path : '/app/locations' , exact : true , element : <ProtectedRoute element={<Locations />} /> } ,
+            { path : '/app/locations/add' , exact : true , element : <ProtectedRoute element={<AddLocation />} /> } ,
+            { path : '/app/locations/edit/:slug' , exact : true , element : <ProtectedRoute element={<EditLocation />} /> } ,
             { path : '*' , element : <Navigate to='/page-not-found' /> }
 
         ]

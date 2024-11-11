@@ -19,12 +19,6 @@ const Sidebar = () => {
         }));
     };
 
-    const checkIsActive = (path, exact = false) => {
-        if (exact) {
-            return location.pathname === path;
-        }
-        return location.pathname.startsWith(path);
-    };
 
     const dispatch = useDispatch();
 
@@ -34,6 +28,15 @@ const Sidebar = () => {
         }
     }
 
+
+    const checkIsActive = (path, exact) => {
+        const currentPath = window.location.pathname;    
+        if (exact) {
+            return currentPath === path;
+        }
+        return currentPath.startsWith(path);
+    };
+
     return (
         <div className='w-full min-h-screen max-h-full '>
             <div>
@@ -42,7 +45,7 @@ const Sidebar = () => {
                 </h1>
                 <ul className='px-3 py-6 flex flex-col gap-4 '>
                     {menuItems.map((item, index) => {
-                        const isActive = checkIsActive(item.path, !item.submenu);
+                        const isActive = checkIsActive(item.path, item.exact);
                         return (
                             <li key={item.id} className=''>
                                 <Link 
