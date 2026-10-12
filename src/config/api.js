@@ -6,8 +6,7 @@ import { logout } from "redux/actions/authActions";
 import { getUser, removeUser } from "utils/authLocalStorage";
 
 
-// export const baseURL = 'http://localhost:4141';  
-export const baseURL = 'https://server.evocodes.com';  
+export const baseURL = process.env.REACT_APP_API_URL || 'https://server.evocodes.com';
 
 const Axios = axios.create({
     baseURL: `${baseURL}/api`,
