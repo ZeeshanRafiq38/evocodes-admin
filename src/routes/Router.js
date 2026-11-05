@@ -20,6 +20,8 @@ const EditBlog = Loadable(lazy(() => import('pages/app/blogs/EditBlog')));
 const Locations = Loadable(lazy(() => import('pages/app/locations')));
 const AddLocation = Loadable(lazy(() => import('pages/app/locations/AddLocation')));
 const EditLocation = Loadable(lazy(() => import('pages/app/locations/EditLocation')));
+const Enquiries = Loadable(lazy(() => import('pages/app/enquiries')));
+const EnquiryDetails = Loadable(lazy(() => import('pages/app/enquiries/EnquiryDetails')));
 
 
 
@@ -66,6 +68,8 @@ const Router = [
             { path : '/app/locations' , exact : true , element : <ProtectedRoute element={<Locations />} /> } ,
             { path : '/app/locations/add' , exact : true , element : <ProtectedRoute element={<AddLocation />} /> } ,
             { path : '/app/locations/edit/:slug' , exact : true , element : <ProtectedRoute element={<EditLocation />} /> } ,
+            { path : '/app/enquiries' , exact : true , element : <ProtectedRoute element={<Enquiries />} /> } ,
+            { path : '/app/enquiries/:id' , exact : true , element : <ProtectedRoute element={<EnquiryDetails />} /> } ,
             { path : '*' , element : <Navigate to='/page-not-found' /> }
 
         ]

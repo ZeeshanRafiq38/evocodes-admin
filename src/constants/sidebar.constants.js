@@ -19,7 +19,14 @@ const menuItems = [
         path : '/app/locations' ,
         icon : 'location-point' ,
         exact : false 
-    } 
+    },
+    {
+        id: 4,
+        name: 'Enquiries',
+        path: '/app/enquiries',
+        icon: 'envelope',
+        exact: false,
+    }
    
 ]
 
